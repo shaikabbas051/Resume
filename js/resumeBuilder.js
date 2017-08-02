@@ -13,7 +13,7 @@
 		"bioPic": "images/abbas.jpg",
 		"skills": ["HTML","CSS","C language","Bootstrap","JavaScript","jQuery"]
 	};
-	
+//display function
 		bio.display = function() {
 			$("#header").prepend(HTMLbioPic.replace("%data%", bio.bioPic));
 			$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
@@ -22,15 +22,14 @@
 			for (var i=0; i<bio.skills.length; i++){ //for loop to display skills
 			$("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
 			}
-				
 			$("#topContacts:last, #footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
 		    $("#topContacts:last, #footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
 		    $("#topContacts:last, #footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
 		    $("#topContacts:last, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 		    $("#topContacts:last, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
 		
-	};
-	bio.display();//call function to display the output
+			};
+		bio.display();
 
 
 //work
@@ -143,7 +142,7 @@
 	};
 	education.display();
 
-//know the click location
+//know the click locations
 	$(document).click(function(point) {
 	  var x = point.pageX;
 	  var y = point.pageY;
@@ -152,8 +151,7 @@
 	});
 
 
-//internationalize
-
+//internationalize the name
 	function inName(name) {
 	name = name.trim().split(" ");
 	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
@@ -163,5 +161,5 @@
 	}
 	$("#header").append(internationalizeButton);
 
-//map
+//google map shows the location of work
 	$("#mapDiv").append(googleMap);
