@@ -99,16 +99,23 @@
 	var education = {
 		"schools":[
 			{
+			"name": 	"John's High School",
+			"degree": 	"SSC",
+			"dates": 	"1999-2011",
+			"location": "Hyderabad, India",
+			"major": 	["General"]
+			},
+			{
 			"name": 	"J N Govt Polytechnic",
 			"degree": 	"Diploma",
-			"dates": 	2014,
+			"dates": 	"2011-2014",
 			"location": "Mumbai, India",
 			"major": 	["EEE"]
 			},
 			{
 			"name": 	"M J College of Engineering and Tech",
 			"degree": 	"Bachelor",
-			"dates": 	2017,
+			"dates": 	"2014-2017",
 			"location": "Hyderabad, India",
 			"major": 	["EEE"]
 			}],
@@ -116,8 +123,21 @@
 			"title": 	"Front-End Web Devevelor",
 			"school": 	"Udacity",
 			"dates": 	"July, 2017",
-			"url": 		"https://in.udacity.com/"
-		}]
+			"url": 		"https://in.udacity.com/course/front-end-web-developer-nanodegree--nd001/"
+			},
+			{
+			"title": 	"Version Control with Git",
+			"school": 	"Udacity",
+			"dates": 	"August, 2017",
+			"url": 		"https://in.udacity.com/course/version-control-with-git--ud123"
+			},
+			{
+			"title": 	"Intro to Computer Science",
+			"school": 	"Udacity",
+			"dates": 	"July, 2017",
+			"url": 		"https://in.udacity.com/course/intro-to-computer-science--cs101/"
+			}
+			]
 	};
 	
 
