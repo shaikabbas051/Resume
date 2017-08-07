@@ -8,7 +8,7 @@
 			"twitter": "@shaikabbas000",
 			"github": "shaikabbas051",
 			"location":"Hyderabad"
-			},
+		},
 		"welcomeMessage": "I'am Glad You're Here, You're at the right place.",
 		"bioPic": "images/abbas.jpg",
 		"skills": ["HTML","CSS","C language","Bootstrap","JavaScript","jQuery"]
@@ -20,48 +20,47 @@
 			$("#header").prepend(HTMLheaderName.replace("%data%", bio.name),HTMLheaderRole.replace("%data%", bio.role));
 			$("#header").append(HTMLskillsStart);
 			for (var i=0; i<bio.skills.length; i++){ //for loop to display skills
-			$("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
+				$("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
 			}
 			$("#topContacts:last, #footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
 		    $("#topContacts:last, #footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
 		    $("#topContacts:last, #footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
 		    $("#topContacts:last, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 		    $("#topContacts:last, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-		
-			};
+		};
 		bio.display();
 
 
 //work
 	var work = {
 		"jobs":[
-		{
+			{
 			"employer":  	"Udacity",
 			"title": 		"Developer",
 			"dates": 		"Jun 2017 - future",
 			"location": 	"Mumbai, India",
 			"description":	"Creates a Adorable Websites. Helps the business to promote to the new level by providing the stunning experience."
-		},
-		{
+			},
+			{
 			"employer": 	"DRDL",
 			"title" : 		"Trainee",
 			"dates" : 		"Nov,2013 - May,2014",
 			"location":  	"Hyderabad, India",
 			"description": 	"Study the characteristics of a material used in defense by performing the various tests. Results will be helpful for future experiments and developments."
-		}
-	]
+			}
+		]
 	};
 
 	work.display = function() {
 		$("#workExperience").append(HTMLworkStart);
 		for (var job=0; job<work.jobs.length; job++){
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		$(".work-entry:last").append(formattedEmployer + formattedTitle);
-		$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
-		$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
-		$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
-	}
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			$(".work-entry:last").append(formattedEmployer + formattedTitle);
+			$(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
+			$(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
+			$(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
+		}
 	};
 	work.display();
 
@@ -79,19 +78,20 @@
 			"dates":	"June 2013 - May 2014",
 			"description": 	"A smart meter which can detect the faults and also charged automatically based on usage",
 			"images": ["images/em2.jpg","images/em.jpeg"]
-			}]
-		};
+			}
+		]
+	};
 
 	projects.display = function(){
 			$("#projects").append(HTMLprojectStart);
 			for (var item=0; item<projects.project.length; item++) {
-			$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.project[item].title));
-			$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.project[item].dates));
-			$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.project[item].description));
-			for (var image=0; image<projects.project[item].images.length; image++){
-				$(".project-entry").append(HTMLprojectImage.replace("%data%", projects.project[item].images[image]));
+				$(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.project[item].title));
+				$(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.project[item].dates));
+				$(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.project[item].description));
+				for (var image=0; image<projects.project[item].images.length; image++){
+					$(".project-entry").append(HTMLprojectImage.replace("%data%", projects.project[item].images[image]));
+				}
 			}
-	}
 	};
 	projects.display();
 
@@ -103,21 +103,21 @@
 			"degree": 	"SSC",
 			"dates": 	"1999-2011",
 			"location": "Hyderabad, India",
-			"major": 	["General"]
+			"majors": 	["General"]
 			},
 			{
 			"name": 	"J N Govt Polytechnic",
 			"degree": 	"Diploma",
 			"dates": 	"2011-2014",
 			"location": "Mumbai, India",
-			"major": 	["EEE"]
+			"majors": 	["EEE"]
 			},
 			{
 			"name": 	"M J College of Engineering and Tech",
 			"degree": 	"Bachelor",
 			"dates": 	"2014-2017",
 			"location": "Hyderabad, India",
-			"major": 	["EEE"]
+			"majors": 	["EEE"]
 			}],
 		"onlineClasses":[{
 			"title": 	"Front-End Web Devevelor",
@@ -149,18 +149,20 @@
 			$(".education-entry:last").append(formattedName + formattedDegree);
 			$(".education-entry:last").append(HTMLschoolDates.replace("%data%",education.schools[school].dates));
 			$(".education-entry:last").append(HTMLschoolLocation.replace("%data%",education.schools[school].location));
-			$(".education-entry:last").append(HTMLschoolMajor.replace("%data%",education.schools[school].major));
+			for (major=0; major<education.schools[school].majors.length; major++){
+				$(".education-entry:last").append(HTMLschoolMajor.replace("%data%",education.schools[school].majors[major]));
 			}
+		}
 			$("#education").append(HTMLonlineClasses);
 			for (var course=0; course<education.onlineClasses.length; course++){
-			$("#education").append(HTMLschoolStart);
-			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[course].title);
-			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[course].school);
-			$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
-			$(".education-entry:last").append(HTMLonlineDates.replace("%data%",education.onlineClasses[course].dates));
-			$(".education-entry:last").append(HTMLonlineURL.replace("%data%",education.onlineClasses[course].url));
+				$("#education").append(HTMLschoolStart);
+				var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[course].title);
+				var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[course].school);
+				$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+				$(".education-entry:last").append(HTMLonlineDates.replace("%data%",education.onlineClasses[course].dates));
+				$(".education-entry:last").append(HTMLonlineURL.replace("%data%",education.onlineClasses[course].url));
 			}
-		};
+	};
 	education.display();
 
 //know the click locations
@@ -174,10 +176,10 @@
 
 //internationalize the name
 	function inName(name) {
-	name = name.trim().split(" ");
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-	name[1] = name[1].toUpperCase();
-	name = name.join(" ");
+		name = name.trim().split(" ");
+		name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+		name[1] = name[1].toUpperCase();
+		name = name.join(" ");
 		return name;
 	}
 	$("#header").append(internationalizeButton);
