@@ -47,7 +47,7 @@
 			"dates" : 		"Nov,2013 - May,2014",
 			"location":  	"Hyderabad, India",
 			"description": 	"Study the characteristics of a material used in defense by performing the various tests. Results will be helpful for future experiments and developments."
-			}
+		}
 		]
 	};
 
@@ -142,7 +142,7 @@
 	
 
 	education.display = function(){
-					$("#education").append(HTMLschoolStart);
+		$("#education").append(HTMLschoolStart);
 		for (var school=0; school<education.schools.length; school++){
 			var formattedName = HTMLschoolName.replace("%data%",education.schools[school].name);
 			var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
